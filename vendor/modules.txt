@@ -1,0 +1,4 @@
+# github.com/confluentinc/confluent-kafka-go v1.3.0
+github.com/confluentinc/confluent-kafka-go/kafka
+# github.com/gorilla/mux v1.7.4
+github.com/gorilla/mux
