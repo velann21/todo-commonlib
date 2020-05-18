@@ -9,5 +9,4 @@ type AsyncJobs interface {
 	KafkaConsumerConfig() *Kafka
 	KafkaConsumerSubscriber() *Kafka
 	BuildConsumer() error
-
 }
