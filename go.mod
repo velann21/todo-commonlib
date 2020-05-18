@@ -1,4 +1,4 @@
-module github.com/velann21/common-lib
+module github.com/velann21/todo-commonlib
 
 go 1.12
 

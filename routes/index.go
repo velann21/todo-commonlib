@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/velann21/common-lib/controller"
+	"github.com/velann21/todo-commonlib/controller"
 )
 
 func Initialize(indexRoute *mux.Router) {
