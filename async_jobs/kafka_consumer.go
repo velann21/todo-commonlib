@@ -70,11 +70,12 @@ func (kf *Kafka) Consumer(serverString string, groupID string, chn chan interfac
 	return kf
 }
 
-func (kf *Kafka) AddSubscribers(func()) {
+func (kf *Kafka) AddSubscribers(func()) *Kafka {
 	err := kf.ConsumerObj.SubscribeTopics([]string{"crawler-data"}, nil)
 	if err != nil {
 		log.Fatal("")
 	}
+	return kf
 }
 
 func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan interface{}) {
