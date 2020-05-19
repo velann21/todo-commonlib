@@ -65,6 +65,7 @@ func (kf *Kafka) Consumer() *Kafka {
 	signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 	c, err := kafka.NewConsumer(kf.ConfigMap)
 	if err != nil {
+		fmt.Print(err)
 		log.Fatal("Error Occured")
 	}
 	kf.ConsumerObj = c

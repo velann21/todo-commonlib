@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b9727894-8c5d-4369-b84e-3e3469c19960" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/async_jobs/kafka_consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/async_jobs/kafka_consumer.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/async_jobs/kafka_consumer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="25" column="47" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="47" />
+            <state relative-caret-position="213">
+              <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
               <folding>
                 <element signature="e#20#126#0" expanded="true" />
               </folding>
@@ -123,7 +124,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="816" />
@@ -180,7 +181,7 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="816" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="816" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27161384" />
@@ -266,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/async_jobs/kafka_consumer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="213">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
           <folding>
             <element signature="e#20#126#0" expanded="true" />
           </folding>
