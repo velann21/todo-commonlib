@@ -11,7 +11,7 @@ import (
 )
 
 type ConsumerConfig struct {
-	Server         []string
+	Server         string
 	AddressVersion string
 	GroupID        string
 	PartitionEOF   bool
@@ -23,7 +23,7 @@ func NewConsumerConfig() *ConsumerConfig {
 	return &ConsumerConfig{}
 }
 
-func (consumerConfig *ConsumerConfig) SetServer(setServer []string) *ConsumerConfig {
+func (consumerConfig *ConsumerConfig) SetServer(setServer string) *ConsumerConfig {
 	consumerConfig.Server = setServer
 	return consumerConfig
 }
