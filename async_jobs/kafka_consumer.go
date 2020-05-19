@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"reflect"
 	"syscall"
 )
 
@@ -78,9 +79,12 @@ func (kf *Kafka) AddSubscribers(func()) *Kafka {
 	return kf
 }
 
-func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan interface{}) {
+func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
 	run := true
-
+	rv := reflect.ValueOf(cdc)
+	if rk := rv.Kind(); rk != reflect.Chan {
+		panic("expecting type: 'chan ...'  instead got: " + rk.String())
+	}
 	for run == true {
 		select {
 		case sig := <-sigchan:
@@ -88,10 +92,13 @@ func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan interface{}) {
 			run = false
 		default:
 			ev := kf.ConsumerObj.Poll(100)
-			cdc <- ev
+			switch e := ev.(type) {
+			case *kafka.Message:
+				cdc <- e.Value
+			}
 		}
 	}
 
 	fmt.Printf("Closing consumer\n")
-	kf.ConsumerObj.Close()
+	_ = kf.ConsumerObj.Close()
 }
