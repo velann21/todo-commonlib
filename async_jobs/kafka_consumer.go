@@ -23,8 +23,8 @@ func NewConsumerConfig() *ConsumerConfig {
 	return &ConsumerConfig{}
 }
 
-func (consumerConfig *ConsumerConfig) SetServer(setServer func()) *ConsumerConfig {
-	setServer()
+func (consumerConfig *ConsumerConfig) SetServer(setServer []string) *ConsumerConfig {
+	consumerConfig.Server = setServer
 	return consumerConfig
 }
 
