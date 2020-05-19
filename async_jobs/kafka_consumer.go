@@ -60,7 +60,7 @@ func (kf *Kafka) KafkaConsumerConfig(cc *ConsumerConfig) *Kafka {
 	return kf
 }
 
-func (kf *Kafka) Consumer(serverString string, groupID string, chn chan interface{}) *Kafka {
+func (kf *Kafka) Consumer() *Kafka {
 	sigchan := make(chan os.Signal, 1)
 	signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 	c, err := kafka.NewConsumer(kf.ConfigMap)
