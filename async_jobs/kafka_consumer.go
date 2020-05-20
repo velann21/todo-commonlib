@@ -71,7 +71,9 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 		fmt.Print(err)
 		log.Fatal("Error Occured")
 	}
-	err = c.SubscribeTopics([]string{"index-data"}, nil)
+
+	kf.ConsumerObj = c
+	err = kf.ConsumerObj.SubscribeTopics([]string{"index-data"}, nil)
 	if err != nil {
 		log.Fatal("")
 	}
@@ -85,7 +87,7 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 			fmt.Printf("Caught signal %v: terminating\n", sig)
 			run = false
 		default:
-			ev := c.Poll(100)
+			ev := kf.ConsumerObj.Poll(100)
 			if ev == nil {
 				continue
 			}
@@ -105,7 +107,7 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 		}
 	}
 
-	kf.ConsumerObj = c
+
 	return kf
 }
 
