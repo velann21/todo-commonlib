@@ -59,7 +59,7 @@ func (kf *Kafka) KafkaConsumerConfig(cc *ConsumerConfig) *Kafka {
 	return kf
 }
 
-func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
+func (kf *Kafka) Consumer() *Kafka {
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "localhost:9092",
 		"broker.address.family": "v4",
@@ -73,46 +73,44 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 	}
 
 	kf.ConsumerObj = c
-	err = kf.ConsumerObj.SubscribeTopics([]string{"index-data"}, nil)
-	if err != nil {
-		log.Fatal("")
-	}
+	//err = kf.ConsumerObj.SubscribeTopics([]string{"index-data"}, nil)
+	//if err != nil {
+	//	log.Fatal("")
+	//}
 
-	kf.ConsumerController = true
-	run := kf.ConsumerController
-
-	for run == true {
-		select {
-		case sig := <-sigchan:
-			fmt.Printf("Caught signal %v: terminating\n", sig)
-			run = false
-		default:
-			ev := kf.ConsumerObj.Poll(100)
-			if ev == nil {
-				continue
-			}
-			switch e := ev.(type) {
-			case *kafka.Message:
-				fmt.Println("Message is here")
-				cdc <- e.Value
-			case *kafka.PartitionEOF:
-				fmt.Println("Partion is EOF")
-			case *kafka.Error:
-				fmt.Print("Error occured in kafka.Error")
-				fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
-				if e.Code() == kafka.ErrAllBrokersDown {
-					run = false
-				}
-			}
-		}
-	}
-
-
+	//kf.ConsumerController = true
+	//run := kf.ConsumerController
+	//
+	//for run == true {
+	//	select {
+	//	case sig := <-sigchan:
+	//		fmt.Printf("Caught signal %v: terminating\n", sig)
+	//		run = false
+	//	default:
+	//		ev := kf.ConsumerObj.Poll(100)
+	//		if ev == nil {
+	//			continue
+	//		}
+	//		switch e := ev.(type) {
+	//		case *kafka.Message:
+	//			fmt.Println("Message is here")
+	//			cdc <- e.Value
+	//		case *kafka.PartitionEOF:
+	//			fmt.Println("Partion is EOF")
+	//		case *kafka.Error:
+	//			fmt.Print("Error occured in kafka.Error")
+	//			fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
+	//			if e.Code() == kafka.ErrAllBrokersDown {
+	//				run = false
+	//			}
+	//		}
+	//	}
+	//}
 	return kf
 }
 
 func (kf *Kafka) AddSubscribers(topics []string) *Kafka {
-	err := kf.ConsumerObj.SubscribeTopics(topics, nil)
+	err := kf.ConsumerObj.SubscribeTopics([]string{"index-data"}, nil)
 	if err != nil {
 		log.Fatal("")
 	}
@@ -132,6 +130,8 @@ func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
 			ev := kf.ConsumerObj.Poll(100)
 			switch e := ev.(type) {
 			case *kafka.Message:
+				fmt.Print("Message is here")
+				fmt.Print(e.Value)
 				cdc <- e.Value
 			case *kafka.PartitionEOF:
 				fmt.Println("Partion is EOF")
