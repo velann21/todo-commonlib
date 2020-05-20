@@ -63,7 +63,7 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "localhost:9092",
 		"broker.address.family": "v4",
-		"group.id":              "crawler_data_grp",
+		"group.id":              "index_data_grp",
 		"session.timeout.ms":    6000,
 		"enable.partition.eof": true,
 		"auto.offset.reset":     "earliest"})
@@ -86,17 +86,16 @@ func (kf *Kafka) Consumer(sigchan chan os.Signal, cdc chan []byte) *Kafka {
 			run = false
 		default:
 			ev := c.Poll(100)
+			if ev == nil {
+				continue
+			}
 			switch e := ev.(type) {
 			case *kafka.Message:
+				fmt.Println("Message is here")
 				cdc <- e.Value
 			case *kafka.PartitionEOF:
 				fmt.Println("Partion is EOF")
 			case *kafka.Error:
-				// Errors should generally be considered
-				// informational, the client will try to
-				// automatically recover.
-				// But in this example we choose to terminate
-				// the application if all brokers are down.
 				fmt.Print("Error occured in kafka.Error")
 				fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
 				if e.Code() == kafka.ErrAllBrokersDown {
