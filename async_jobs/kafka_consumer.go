@@ -72,8 +72,8 @@ func (kf *Kafka) Consumer() *Kafka {
 	return kf
 }
 
-func (kf *Kafka) AddSubscribers(func()) *Kafka {
-	err := kf.ConsumerObj.SubscribeTopics([]string{"crawler-data"}, nil)
+func (kf *Kafka) AddSubscribers(topics []string) *Kafka {
+	err := kf.ConsumerObj.SubscribeTopics(topics, nil)
 	if err != nil {
 		log.Fatal("")
 	}
