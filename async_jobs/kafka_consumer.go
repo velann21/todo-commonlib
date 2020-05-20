@@ -95,7 +95,8 @@ func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
 			switch e := ev.(type) {
 			case *kafka.Message:
 				cdc <- e.Value
-
+			case *kafka.PartitionEOF:
+				fmt.Println("Partion is EOF")
 			case *kafka.Error:
 			// Errors should generally be considered
 			// informational, the client will try to
