@@ -19,6 +19,8 @@ type Kafka struct {
 	
 	ConfigMap *kafka.ConfigMap
 	ConsumerObj *kafka.Consumer
+
+	ConsumerController bool
 }
 
 func New(broker string, topic string) *Kafka{

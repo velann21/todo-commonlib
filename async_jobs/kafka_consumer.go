@@ -61,8 +61,6 @@ func (kf *Kafka) KafkaConsumerConfig(cc *ConsumerConfig) *Kafka {
 }
 
 func (kf *Kafka) Consumer() *Kafka {
-	sigchan := make(chan os.Signal, 1)
-	signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 	c, err := kafka.NewConsumer(kf.ConfigMap)
 	if err != nil {
 		fmt.Print(err)
@@ -81,7 +79,8 @@ func (kf *Kafka) AddSubscribers(topics []string) *Kafka {
 }
 
 func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
-	run := true
+	kf.ConsumerController = true
+	run := kf.ConsumerController
 	rv := reflect.ValueOf(cdc)
 	if rk := rv.Kind(); rk != reflect.Chan {
 		panic("expecting type: 'chan ...'  instead got: " + rk.String())
@@ -102,4 +101,8 @@ func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
 
 	fmt.Printf("Closing consumer\n")
 	_ = kf.ConsumerObj.Close()
+}
+
+func (kf *Kafka) SendTerminationSignal(sigchan chan os.Signal){
+	signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 }
