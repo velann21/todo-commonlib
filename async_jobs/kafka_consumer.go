@@ -95,8 +95,20 @@ func (kf *Kafka) BuildConsumer(sigchan chan os.Signal, cdc chan []byte) {
 			switch e := ev.(type) {
 			case *kafka.Message:
 				cdc <- e.Value
+
+			case *kafka.Error:
+			// Errors should generally be considered
+			// informational, the client will try to
+			// automatically recover.
+			// But in this example we choose to terminate
+			// the application if all brokers are down.
+			fmt.Print("Error occured in kafka.Error")
+			fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
+			if e.Code() == kafka.ErrAllBrokersDown {
+				run = false
 			}
 		}
+	}
 	}
 
 	fmt.Printf("Closing consumer\n")
