@@ -1,4 +1,12 @@
 # github.com/confluentinc/confluent-kafka-go v1.3.0
 github.com/confluentinc/confluent-kafka-go/kafka
-# github.com/gorilla/mux v1.7.4
-github.com/gorilla/mux
+# github.com/go-sql-driver/mysql v1.4.1
+github.com/go-sql-driver/mysql
+# github.com/golang-migrate/migrate v3.5.4+incompatible
+github.com/golang-migrate/migrate
+github.com/golang-migrate/migrate/database
+github.com/golang-migrate/migrate/database/mysql
+github.com/golang-migrate/migrate/source
+github.com/golang-migrate/migrate/source/file
+# google.golang.org/appengine v1.6.6
+google.golang.org/appengine/cloudsql
