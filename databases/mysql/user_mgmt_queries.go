@@ -15,6 +15,7 @@ func GetUserByEmail()(query string){
 	return sqlStatement
 }
 
+
 func GetUserWithRole()(query string){
 	sqlStatement := `Select a.id, a.first_name, a.last_name, a.email, a.password, a.phone_number, a.dob, b.user_id, b.role_id, roles.role_name from users a  Inner Join users_roles b on a.id = b.user_id Inner Join (Select id,role_name from roles) roles on b.role_id = roles.id where a.email=?;`
 	return sqlStatement

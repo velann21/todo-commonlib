@@ -4,9 +4,11 @@ github.com/confluentinc/confluent-kafka-go/kafka
 github.com/go-sql-driver/mysql
 # github.com/golang-migrate/migrate v3.5.4+incompatible
 github.com/golang-migrate/migrate
-github.com/golang-migrate/migrate/database
 github.com/golang-migrate/migrate/database/mysql
-github.com/golang-migrate/migrate/source
 github.com/golang-migrate/migrate/source/file
+github.com/golang-migrate/migrate/database
+github.com/golang-migrate/migrate/source
+# github.com/golang/protobuf v1.3.1
+github.com/golang/protobuf/proto
 # google.golang.org/appengine v1.6.6
 google.golang.org/appengine/cloudsql
