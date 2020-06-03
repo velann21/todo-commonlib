@@ -3,6 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="b9727894-8c5d-4369-b84e-3e3469c19960" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto_files/users_srv.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto_files/users_srv.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto_files/users_srv.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/clone.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/decode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/deprecated.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/deprecated.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/discard.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/discard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/encode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/equal.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/extensions.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/extensions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/lib.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/message_set.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/pointer_reflect.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/pointer_unsafe.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/properties.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/properties.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/table_marshal.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/table_merge.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/table_unmarshal.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/text.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/golang/protobuf/proto/text_parser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,17 +37,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go.mod">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="41" selection-start-column="27" selection-end-column="41" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proto_files/users_srv.pb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="17">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+              <folding>
+                <element signature="e#92#168#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,37 +61,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/schema_registry.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/async_jobs/kafka_producer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-405">
+            <state relative-caret-position="306">
               <caret line="22" column="22" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/async_jobs/kafka_consumer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="2142">
               <caret line="133" column="33" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/proto_files/users_srv.proto">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -99,6 +115,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>s</find>
+      <find>Server</find>
+    </findStrings>
+  </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,17 +132,18 @@
         <option value="$PROJECT_DIR$/controller/schema_registry.go" />
         <option value="$PROJECT_DIR$/routes/index.go" />
         <option value="$PROJECT_DIR$/async_jobs/kafka.go" />
-        <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/routes/index.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/async_jobs/kafka_producer.go" />
         <option value="$PROJECT_DIR$/async_jobs/kafka_consumer.go" />
         <option value="$PROJECT_DIR$/async_jobs/kafka_consumer.go" />
+        <option value="$PROJECT_DIR$/proto_files/users_srv.proto" />
+        <option value="$PROJECT_DIR$/go.mod" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="816" />
@@ -143,6 +166,11 @@
               <item name="todo-commonlib" type="b2602c69:ProjectViewProjectNode" />
               <item name="todo-commonlib" type="462c0819:PsiDirectoryNode" />
               <item name="async_jobs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-commonlib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-commonlib" type="462c0819:PsiDirectoryNode" />
+              <item name="proto_files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -178,8 +206,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="816" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27665707" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28674352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -192,7 +221,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -209,27 +238,23 @@
     <vendoring-mode>true</vendoring-mode>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" selection-start-column="27" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go" />
+    <entry file="file://$PROJECT_DIR$/routes/index.go" />
+    <entry file="file://$PROJECT_DIR$/controller/schema_registry.go" />
     <entry file="file://$PROJECT_DIR$/go.sum">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.go">
+    <entry file="file://$PROJECT_DIR$/async_jobs/kafka_producer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        <state relative-caret-position="306">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/async_jobs/kafka_consumer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="133" column="33" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -239,13 +264,6 @@
     <entry file="file://$PROJECT_DIR$/.version">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/schema_registry.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/async_jobs/kafka.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -253,17 +271,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/async_jobs/kafka_producer.go">
+    <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/async_jobs/kafka_consumer.go">
+    <entry file="file://$PROJECT_DIR$/proto_files/users_srv.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="133" column="33" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto_files/proto_files.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto_files/users_srv.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#92#168#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
