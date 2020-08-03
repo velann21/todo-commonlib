@@ -97,9 +97,21 @@ message AttachUsersRolesRequest{
     }
 }
 
-
 message AttachUsersRolesResponse{
     bool success = 1;
+}
+
+message AttachUsersTagsRequest{
+    repeated int64 tags=1;
+    repeated int64 users=2;
+    map<string, tags> tagsMap = 3;
+    message tags{
+        repeated string tags= 1;
+    }
+}
+
+message AttachTagsResponse{
+     bool success = 1;
 }
 
 service UserManagementService {
