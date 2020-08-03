@@ -35,10 +35,78 @@ message UserLoginResponse{
     string refresh_token =2;
 }
 
+message ListUserRequests{
+    string all = 1;
+}
+
+message ListUserResponse{
+    string first_name  = 1;
+    string last_name = 2;
+    string email_id = 3;
+    string password = 4;
+    string confirm_password = 5;
+    string tags = 6;
+    Location Location = 7;
+}
+
+message CreateRoleRequest {
+    string name=1;
+    string description=2;
+}
+
+message CreateRoleResponse {
+    bool success = 1;
+    string role_id =2;
+}
+
+message CreatePermissionRequest{
+    string name=1;
+    string description=2;
+}
+
+message CreatePermissionResponse{
+    bool success = 1;
+    string permission_id =2;
+}
+
+message CreateTagRequest{
+    string name=1;
+    string description=2;
+}
+
+message CreateTagResponse{
+    bool success = 1;
+    string tag_id =2;
+}
+
+message AttachRolesPermissionsRequest{
+    repeated int64 roles=1;
+    repeated int64 permissions=2;
+}
+
+message AttachRolesPermissionsResponse{
+    bool success = 1;
+}
+
+message AttachUsersRolesRequest{
+    repeated int64 roles=1;
+    repeated int64 users=2;
+}
+
+message AttachUsersRolesResponse{
+    bool success = 1;
+}
 
 service UserManagementService {
     rpc UserRegistration(UserRegistrationRequest) returns (UserRegistrationResponse) {};
     rpc UserLogin(UserLoginRequest) returns (UserLoginResponse) {};
+    rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {};
+    rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse) {};
+    rpc CreateTags(CreateTagRequest) returns (CreateTagResponse) {};
+    rpc AttachRolesPermissions(AttachRolesPermissionsRequest) returns (AttachRolesPermissionsResponse) {};
+    rpc AttachUsersRoles(AttachUsersRolesRequest) returns (AttachUsersRolesResponse) {};
 }
+
+//protoc proto_files/users_srv.proto -I. --go_out=plugins=grpc:.
 
 
