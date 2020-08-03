@@ -79,12 +79,32 @@ message CreateTagResponse{
     string tag_id =2;
 }
 
+message AttachRolesPermissionsRequest{
+    repeated int64 roles=1;
+    repeated int64 permissions=2;
+}
+
+message AttachRolesPermissionsResponse{
+    bool success = 1;
+}
+
+message AttachUsersRolesRequest{
+    repeated int64 roles=1;
+    repeated int64 users=2;
+}
+
+message AttachUsersRolesResponse{
+    bool success = 1;
+}
+
 service UserManagementService {
     rpc UserRegistration(UserRegistrationRequest) returns (UserRegistrationResponse) {};
     rpc UserLogin(UserLoginRequest) returns (UserLoginResponse) {};
     rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {};
     rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse) {};
     rpc CreateTags(CreateTagRequest) returns (CreateTagResponse) {};
+    rpc AttachRolesPermissions(AttachRolesPermissionsRequest) returns (AttachRolesPermissionsResponse) {};
+    rpc AttachUsersRoles(AttachUsersRolesRequest) returns (AttachUsersRolesResponse) {};
 }
 
 //protoc proto_files/users_srv.proto -I. --go_out=plugins=grpc:.
