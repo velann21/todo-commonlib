@@ -91,8 +91,8 @@ message AttachRolesPermissionsResponse{
 message AttachUsersRolesRequest{
     repeated int64 roles=1;
     repeated int64 users=2;
-    map<string, users> role = 3;
-    message users{
+    map<string, usersMap> role = 3;
+    message usersMap{
         repeated string users= 1;
     }
 }
@@ -104,8 +104,8 @@ message AttachUsersRolesResponse{
 message AttachUsersTagsRequest{
     repeated int64 tags=1;
     repeated int64 users=2;
-    map<string, tags> tagsMap = 3;
-    message tags{
+    map<string, tagsMap> tagsMapV = 3;
+    message tagsMap{
         repeated string tags= 1;
     }
 }
