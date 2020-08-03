@@ -38,6 +38,7 @@ message UserLoginResponse{
 message ListUserRequests{
     string all = 1;
 }
+
 message ListUserResponse{
     string first_name  = 1;
     string last_name = 2;
@@ -81,7 +82,9 @@ message CreateTagResponse{
 service UserManagementService {
     rpc UserRegistration(UserRegistrationRequest) returns (UserRegistrationResponse) {};
     rpc UserLogin(UserLoginRequest) returns (UserLoginResponse) {};
-    rpc ListUsers(ListUserRequests) returns (ListUserResponse) {};
+    rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {};
+    rpc CreatePermission(CreatePermissionRequest) returns (CreatePermissionResponse) {};
+    rpc CreateTags(CreateTagRequest) returns (CreateTagResponse) {};
 }
 
 //protoc proto_files/users_srv.proto -I. --go_out=plugins=grpc:.
