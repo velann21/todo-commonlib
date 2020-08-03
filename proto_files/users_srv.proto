@@ -122,6 +122,7 @@ service UserManagementService {
     rpc CreateTags(CreateTagRequest) returns (CreateTagResponse) {};
     rpc AttachRolesPermissions(AttachRolesPermissionsRequest) returns (AttachRolesPermissionsResponse) {};
     rpc AttachUsersRoles(AttachUsersRolesRequest) returns (AttachUsersRolesResponse) {};
+    rpc AttachUsersTags(AttachUsersTagsRequest) returns (AttachTagsResponse) {};
 }
 
 //protoc proto_files/users_srv.proto -I. --go_out=plugins=grpc:.
