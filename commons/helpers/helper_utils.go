@@ -28,7 +28,7 @@ func HttpRequest(methodType string, Url string, body []byte) (*http.Response , e
 
 func SetEnv(){
 	//os.Setenv("MYSQL_CONN", "root:root@tcp(database:3306)/UsersService?")
-	os.Setenv("MYSQL_CONN", "root:Siar@123@tcp(localhost:3306)/usersrv?")
+	os.Setenv("MYSQL_CONN", "root:Siar@123@tcp(localhost:3306)/todousersrv?")
 	os.Setenv("AUTHSERVICE_CONN", "http://localhost:8083/api/v1/auth/newtoken")
 
 }
