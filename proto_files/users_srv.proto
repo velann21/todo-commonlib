@@ -111,8 +111,18 @@ message AttachUsersTagsRequest{
 }
 
 message AttachTagsResponse{
-     bool success = 1;
+    bool success = 1;
 }
+
+message SqlMigrationRequest{
+    int64 upcount = 1;
+    int64 downcount = 2;
+}
+
+message SqlMigrationResponse{
+    bool success = 1;
+}
+
 
 service UserManagementService {
     rpc UserRegistration(UserRegistrationRequest) returns (UserRegistrationResponse) {};
@@ -123,6 +133,7 @@ service UserManagementService {
     rpc AttachRolesPermissions(AttachRolesPermissionsRequest) returns (AttachRolesPermissionsResponse) {};
     rpc AttachUsersRoles(AttachUsersRolesRequest) returns (AttachUsersRolesResponse) {};
     rpc AttachUsersTags(AttachUsersTagsRequest) returns (AttachTagsResponse) {};
+    rpc SqlMigration(SqlMigrationRequest) returns (SqlMigrationResponse) {};
 }
 
 //protoc proto_files/users_srv.proto -I. --go_out=plugins=grpc:.
