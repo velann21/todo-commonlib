@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "resource_manager";
+package resourcemanager;
+
+message CreateClusterRequest{
+    repeated string  masterIP = 1;
+    repeated string  workerIP = 2;
+    repeated string  etcdIP = 3;
+}
+
+message CreateClusterResponse{
+    bool success = 1;
+}
+
+service ResourceManagerService {
+    rpc CreateCluster(CreateClusterRequest) returns (CreateClusterResponse);
+}
