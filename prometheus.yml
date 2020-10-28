@@ -34,9 +34,10 @@ scrape_configs:
         labels:
           cluster: 'promethues'
 
-  - job_name: 'node_exporter'
+  - job_name: 'service1'
+    honor_labels: true
     static_configs:
       - targets:
-          - '172.17.0.2:9100'
+          - 'localhost:5000'
         labels:
-           cluster: 'node_exporter_metrics'
+          cluster: 'promethues'

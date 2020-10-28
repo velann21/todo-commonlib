@@ -1,0 +1,36 @@
+syntax = "proto3";
+option go_package = "resource_manager";
+package resourcemanager;
+
+message CreateClusterRequest{
+    repeated string  masterIP = 1;
+    repeated string  workerIP = 2;
+    repeated string  etcdIP = 3;
+}
+
+message CreateClusterResponse{
+    bool success = 1;
+}
+
+message EventsRequests  {
+    string eventType= 1;
+    string serviceName = 2;
+    string time = 3;
+    string actionType = 4;
+    string traceID = 5;
+    string errorCode = 6;
+    EventsTransaction transaction  = 7;
+    map<string, bytes>  metaData= 8;
+}
+message EventsTransaction {
+    string event_type = 1;
+}
+
+message EventsResponse {
+    bool success = 1;
+}
+
+service ResourceManagerService {
+    rpc CreateCluster(CreateClusterRequest) returns (CreateClusterResponse);
+    rpc CollectEvent(EventsRequests) returns (EventsResponse);
+}
