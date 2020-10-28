@@ -34,16 +34,10 @@ scrape_configs:
         labels:
           cluster: 'promethues'
 
-  - job_name: 'node_exporter'
+  - job_name: 'service1'
+    honor_labels: true
     static_configs:
       - targets:
-          - 'node:9100'
+          - 'localhost:5000'
         labels:
-           cluster: 'node_exporter_metrics'
-
-  - job_name: 'cadvisor'
-    static_configs:
-        - targets:
-            - 'cadvisor:8080'
-          labels:
-            cluster: 'cadvisor'
+          cluster: 'promethues'
